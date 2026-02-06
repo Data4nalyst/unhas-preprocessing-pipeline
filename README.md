@@ -1,4 +1,4 @@
-# 🚀 Unhas Preprocessing Pipeline (ETL for RAG)
+# Unhas Preprocessing Pipeline (ETL for RAG)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-Data_Processing-green)
@@ -14,10 +14,10 @@ Tujuan utamanya adalah mengubah data mentah yang tidak terstruktur menjadi forma
 - Automated Web Scraping: Mengambil konten berita terbaru dari situs resmi Unhas menggunakan BeautifulSoup.
 - OCR Document Digitization: Mengubah dokumen PDF hasil pemindaian (seperti aturan perpustakaan atau SOP) menjadi teks digital menggunakan Tesseract OCR dan Poppler.
 - Cleaning:
-    - Normalisasi teks dan pembersihan noise web (iklan, header, metadata).
-    - Perbaikan kesalahan baca (OCR Typos) menggunakan kamus koreksi kustom.
-    - Standardisasi format poin-poin (bullet points) dan spasi.
-    - Chunking: Memotong teks menggunakan RecursiveCharacterTextSplitter dari LangChain dengan parameter chunk size 1000 dan overlap 200 untuk menjaga konteks antar potongan.
+  - Normalisasi teks dan pembersihan noise web (iklan, header, metadata).
+  - Perbaikan kesalahan baca (OCR Typos) menggunakan kamus koreksi kustom.
+  - Standardisasi format poin-poin (bullet points) dan spasi.
+  - Chunking: Memotong teks menggunakan RecursiveCharacterTextSplitter dari LangChain dengan parameter chunk size 1000 dan overlap 200 untuk menjaga konteks antar potongan.
 
 ## 🛠️ Tech Stack
 - Core: Python
@@ -43,8 +43,8 @@ unhas-preprocessing-pipeline/
 ## ⚙️ Instalasi & Persiapan
 1. Prasyarat Sistem
 Pastikan kamu telah menginstall perangkat lunak pendukung OCR berikut di sistem operasi kamu:
-- Tesseract OCR: [Download Installer Windows (UB-Mannheim)](https://github.com/UB-Mannheim/tesseract/wiki)
-- Poppler: [Download Poppler Terbaru](https://github.com/oschwartz10612/poppler-windows/releases)
+  - Tesseract OCR: [Download Installer Windows (UB-Mannheim)](https://github.com/UB-Mannheim/tesseract/wiki)
+  - Poppler: [Download Poppler Terbaru](https://github.com/oschwartz10612/poppler-windows/releases)
 
 2. Instalasi Library
 ```Bash
@@ -65,9 +65,9 @@ python main_pipeline.py
 Setiap baris dalam file output merepresentasikan satu chunk data:
 ```JSON
 {
-  "id": "pdf_2_1",
-  "title": "SOP Peminjaman Buku",
-  "source": "Dokumen PDF (SOP_Peminjaman.pdf)",
-  "text": "Mahasiswa dapat meminjam maksimal 3 buku dengan jangka waktu 7 hari..."
+  "id": "pdf_37_3",
+  "title": "SOP KEANGGOTAAN.pdf",
+  "source": "Dokumen PDF (SOP KEANGGOTAAN.pdf)",
+  "text": ". an . Pemustaka membayar biaya administrasi sebesar..."
 }
 ```
