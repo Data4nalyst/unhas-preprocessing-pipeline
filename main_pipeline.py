@@ -10,13 +10,12 @@ from pdf2image import convert_from_path
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from tqdm import tqdm
 
-
 # --- KONFIGURASI ---
 URL_BERITA = "https://www.unhas.ac.id/berita/?lang=id"
 FOLDER_PDF = "data/pdf"
 OUTPUT_JSONL = "output/knowledge_base_unhas.jsonl"
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-POPPLER_PATH = r'C:\poppler-25.12.0\Library\bin' 
+pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
+POPPLER_PATH = 'C:/poppler-25.12.0/Library/bin' 
 
 # Kamus Typo 
 KAMUS_TYPO = {
@@ -34,7 +33,6 @@ KAMUS_TYPO = {
     "BAB Ill": "BAB III",
     "Unhas": "Universitas Hasanuddin"
 }
-
 
 # --- 1. MODUL SCRAPING BERITA ---
 def run_news_scraper():
@@ -80,7 +78,6 @@ def run_news_scraper():
     df = pd.DataFrame(data_berita)
     print(f"✅ Berhasil mengambil {len(df)} berita.")
     return df
-
 
 # --- 2. MODUL INGESTION PDF TO TEXT (OCR - Poppler) ---
 def run_ingestion_pdf():

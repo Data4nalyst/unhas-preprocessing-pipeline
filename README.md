@@ -48,10 +48,21 @@ Pastikan kamu telah menginstall perangkat lunak pendukung OCR berikut di sistem 
 
 2. Instalasi Library
 ```Bash
-git clone https://github.com/username-kamu/unhas-preprocessing-pipeline.git
+git clone https://github.com/Data4nalyst/unhas-preprocessing-pipeline.git
 cd unhas-preprocessing-pipeline
 pip install -r requirements.txt
 ```
+
+3. Konfigurasi Path 
+Agar OCR berfungsi, Anda wajib memberi tahu program di mana lokasi Tesseract dan Poppler terinstall di komputer Anda.
+  - Buka file main_pipeline.py.
+  - Cari bagian KONFIGURASI (sekitar baris 15).
+  - Ubah variabel berikut sesuai lokasi instalasi di komputer Anda:
+  ```Python
+  # CONTOH (Sesuaikan dengan path di komputer Anda):
+  pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
+  POPPLER_PATH = 'C:/poppler-25.12.0/Library/bin' 
+  ```
 
 ## 🚀 Cara Penggunaan
 1. Masukkan file PDF yang ingin diproses ke dalam folder data/pdf/.
@@ -65,9 +76,9 @@ python main_pipeline.py
 Setiap baris dalam file output merepresentasikan satu chunk data:
 ```JSON
 {
-  "id": "pdf_37_3",
-  "title": "SOP KEANGGOTAAN.pdf",
-  "source": "Dokumen PDF (SOP KEANGGOTAAN.pdf)",
-  "text": ". an . Pemustaka membayar biaya administrasi sebesar..."
+  "id": "pdf_36_1",
+  "title": "SK Rektor tentang Peraturan Pemanfaatan Koleksi Perpustakaan Unhas (2).pdf", 
+  "source": "Dokumen PDF (SK Rektor tentang Peraturan Pemanfaatan Koleksi Perpustakaan Unhas (2).pdf)", 
+  "text": "Menimbang : a. bahwa koleksi UPT Perpustakaan Universitas Hasanuddin merupakan asset..."
 }
 ```
