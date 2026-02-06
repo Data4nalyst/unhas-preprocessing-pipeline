@@ -1,0 +1,11 @@
+pandas
+numpy
+requests
+beautifulsoup4
+lxml
+pdfplumber
+tqdm 
+langchain-text-splitters
+pytesseract
+pdf2image
+pillow
